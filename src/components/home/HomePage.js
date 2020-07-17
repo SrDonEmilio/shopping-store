@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import "./home.scss";
 
 const HomePage = (props) => {
-  const listProducts = useSelector((state) => state.productsReducer);
+  let listProducts = useSelector((state) => state.productsReducer);
   useEffect(() => {
     document.querySelectorAll(".product-item").forEach((item) => {
       item.addEventListener("click", () => {
@@ -26,7 +26,11 @@ const HomePage = (props) => {
           <h1>Products</h1>
         </Row>
         <Row xs={1} md={2} lg={3}>
-          {console.log(listProducts)}
+          {
+            listProducts.items.map(product => {
+              return <ProductItem product={product} key={product.name}/>
+            })
+          }
         </Row>
       </Container>
       <Sideview />
