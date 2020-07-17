@@ -1,5 +1,9 @@
 Store App React Redux
 
+## Add product
+
+To add a new product, go to /admin 
+
 ## Available Scripts
 
 In the project directory, you can run:
