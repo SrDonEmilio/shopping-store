@@ -1,27 +1,19 @@
 import React, { useEffect } from "react";
 
-import "./productView.scss";
+import { Container, Row } from "react-bootstrap";
 
-const ProductView = ({title, price, description, image}) => {
-  useEffect(() => {
-    document.querySelector(".close").addEventListener("click", () => {
-      document.querySelector(".product-view").classList.remove("show");
-    });
-    document
-      .querySelector(".inactive-section")
-      .addEventListener("click", () => {
-        document.querySelector(".product-view").classList.remove("show");
-      });
-  });
+import "./ProductView.scss";
+
+const ProductView = ({ title, price, description, image, className }) => {
+  useEffect(() => {});
   return (
-    <div className="product-view">
-      <div className="inactive-section"></div>
-      <div className="content">
-        <button type="button" className="close" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+    <div className={`product-view ` + className}>
+      <Container>
+        <Row>
+          <h2>Product Detail</h2>
+        </Row>
         <div className="product-detail">
-          <div className="product-image">
+          <div className="product-image mb-3">
             <img src={image} alt="Imagen del Producto" />
           </div>
           <div className="product-description">
@@ -32,7 +24,7 @@ const ProductView = ({title, price, description, image}) => {
             <p className="product-description">{description}</p>
           </div>
         </div>
-      </div>
+      </Container>
     </div>
   );
 };

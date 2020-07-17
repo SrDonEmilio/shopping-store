@@ -18,11 +18,16 @@
 
   .product-image {
     text-align: center;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     img {
       max-width: 100%;
-      max-height: 300px;
-      padding: 30px;
+      max-height: 250px;
+      padding: 0 30px;
+      width: initial;
     }
   }
 }

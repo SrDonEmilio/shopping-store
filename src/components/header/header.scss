@@ -7,6 +7,14 @@ header {
         height: 60px;
     }
 
+    .btn-link {
+        float: right;
+        
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
     .cart-icon {
         height: 50px;
         background-color: white;

@@ -1,5 +1,5 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import React, { useEffect } from "react";
+import { Container, Row, Col, Button } from "react-bootstrap";
 
 import "./header.scss";
 
@@ -8,6 +8,12 @@ import CartIcon from "../../images/icons/icons8-shopping-cart-100.png";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
+  useEffect(() => {
+    document.querySelector('.cart-icon').addEventListener('click', () => {
+      document.querySelector(".side-views .cart-view").classList.remove("hide");
+      document.querySelector(".side-views").classList.add("show");
+    })
+  })
   return (
     <header>
       <Container>
@@ -18,13 +24,13 @@ const Header = () => {
             </NavLink>
           </Col>
           <Col sm>
-            <NavLink exact to="/cart">
+            <Button variant="link">
               <img
                 className="cart-icon box-shadow"
                 src={CartIcon}
                 alt="Cart Icon"
               ></img>
-            </NavLink>
+            </Button>
           </Col>
         </Row>
       </Container>
